@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="./css/skin.css" />
+	<title>Controle de Estoque</title>
+</h:head>
+
+<h:body>
+
+	<h:form id="barraDeFerramentas">
+		<p:toolbar>
+			<p:toolbarGroup align="left">
+
+				<p:commandButton value="Home" action="index.xhtml" ajax="false" />
+				<p:commandButton value="Produtos" action="produtos.xhtml"
+					ajax="false" />
+
+				<p:commandButton value="Vendas" action="vendas.xhtml" ajax="false" />
+				<p:commandButton value="Compras" action="compras.xhtml" ajax="false" />
+				<p:commandButton value="Relatórios" action="relatorios.xhtml" ajax="false" />
+			</p:toolbarGroup>
+		</p:toolbar>
+	</h:form>
+	<br />
+	<br />
+	 <h:messages />
+	<div>
+		<ui:insert name="Conteudo"> Aqui vai o conteudo </ui:insert>
+	</div>
+
+</h:body>
+
+</html>

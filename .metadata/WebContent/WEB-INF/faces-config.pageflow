@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13867245012340" configfile="/ControleEstoque/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" y="84" id="pf13867247667697" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf13867247667698 pf13869866056313 pf13870596120297" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastroProduto.xhtml" x="468" y="84" id="pf13869827527231" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13869827527220" path="/cadastroProduto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="produtos.xhtml" x="264" y="84" id="pf13869852934382" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf13869827527220" inlinks="pf13867247667698" path="/produtos.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="vendas.xhtml" x="270" y="192" id="pf13869866056314" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf13870222022625" inlinks="pf13869866056313" path="/vendas.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastroVenda.xhtml" x="524" y="197" id="pf13870222022626" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf13870222022625" path="/cadastroVenda.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="compras.xhtml" x="252" y="288" id="pf13870596120298" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf13870596120299" inlinks="pf13870596120297" path="/compras.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastroCompraxhtml" x="524" y="312" id="pf138705961202910" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf13870596120299" path="/cadastroCompra.xhtml"/>
+  <links id="pf13867247667698" target="pf13869852934382" source="pf13867247667697" outcome="produtos"/>
+  <links id="pf13869827527220" target="pf13869827527231" source="pf13869852934382" outcome="cadastroProduto"/>
+  <links id="pf13869866056313" target="pf13869866056314" source="pf13867247667697" outcome="vendas"/>
+  <links id="pf13870222022625" target="pf13870222022626" source="pf13869866056314" outcome="cadastroVenda"/>
+  <links id="pf13870596120297" target="pf13870596120298" source="pf13867247667697" outcome="compras"/>
+  <links id="pf13870596120299" target="pf138705961202910" source="pf13870596120298" outcome="cadastroCompra"/>
+</pageflow:Pageflow>

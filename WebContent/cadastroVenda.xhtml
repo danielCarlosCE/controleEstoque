@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='ISO8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="/template.xhtml">
+
+	<ui:define name="Conteudo">
+		<h:form>
+
+			<div>
+				<fieldset>
+					<legend>Cadastro:</legend>
+					<p:outputLabel value="Id: " />
+					<h:inputHidden value="#{vendasBean.vendaSelecionada.id}"></h:inputHidden>
+					<p:inputText disabled="true"
+						value="#{vendasBean.vendaSelecionada.id}"></p:inputText>
+					<br />
+
+
+
+					<p:outputLabel value="Produto: " />
+					<p:inputText value="#{vendasBean.nomeProduto}"></p:inputText><br />
+
+					<p:outputLabel value="Cliente: " />
+					<p:inputText value="#{vendasBean.nomeCliente}"></p:inputText><br />
+
+
+					<p:outputLabel value="Valor: " />
+					<p:inputText value="#{vendasBean.vendaSelecionada.valor}"></p:inputText><br />
+					<br />
+
+					<h:inputHidden value="#{vendasBean.vendaSelecionada.dataVenda}">
+						<f:convertDateTime pattern="MM/dd/yyyy HH:mm" />
+					</h:inputHidden>
+
+
+					<h:inputHidden value="#{vendasBean.editando}"></h:inputHidden>
+					<p:commandButton action="#{vendasBean.submit}" value="OK"></p:commandButton>
+
+				</fieldset>
+			</div>
+
+
+
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>

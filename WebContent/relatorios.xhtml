@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='ISO8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="/template.xhtml">
+
+	<ui:define name="Conteudo">
+
+		<h:form>
+			<div style="width: 500px; margin: auto;">
+				<table>
+					<tr>
+						<td><h:outputText value="Tipo de Relatório:" /></td>
+						<td><p:selectOneMenu value="#{relatoriosBean.tipo}">
+								<f:selectItem id="item1" itemLabel="Produtos" itemValue="1" />
+								<f:selectItem id="item3" itemLabel="Vendas" itemValue="2" />
+								<f:selectItem id="item2" itemLabel="Clientes" itemValue="3" />
+								<f:selectItem id="item4" itemLabel="Compras" itemValue="4" />
+								<f:selectItem id="item5" itemLabel="Fornecedores" itemValue="5" />
+							</p:selectOneMenu></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Período Inicial:" /></td>
+						<td><p:calendar value="#{relatoriosBean.dataInicial}"
+								id="popupCal" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputText value="Período Final:" /></td>
+						<td><p:calendar value="#{relatoriosBean.dataFinal}"
+								id="popupCal2" /></td>
+					</tr>
+				</table>
+				<div style="width: 400px; margin: auto;">
+					
+					<p:commandButton value="Gerar PDF" ajax="false"
+						onclick="PrimeFaces.monitorDownload(start, stop)">
+						<p:fileDownload value="#{relatoriosBean.pdf}" />
+					</p:commandButton>
+					
+					<p:commandButton value="Gerar XLS" ajax="false"
+						onclick="PrimeFaces.monitorDownload(start, stop)">
+						<p:fileDownload value="#{relatoriosBean.xls}" />
+					</p:commandButton>
+
+				</div>
+			</div>
+
+
+		</h:form>
+		<script type="text/javascript">
+			function start() {
+				PF('statusDialog').show();
+			}
+
+			function stop() {
+				PF('statusDialog').hide();
+			}
+		</script>
+
+
+	</ui:define>
+
+</ui:composition>

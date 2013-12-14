@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	<navigation-rule>
+		<display-name>produtos.xhtml</display-name>
+		<from-view-id>/produtos.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cadastroProduto</from-outcome>
+			<to-view-id>/cadastroProduto.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>produtos</from-outcome>
+			<to-view-id>/produtos.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>vendas</from-outcome>
+			<to-view-id>/vendas.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>vendas.xhtml</display-name>
+		<from-view-id>/vendas.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cadastroVenda</from-outcome>
+			<to-view-id>/cadastroVenda.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>*</display-name>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>compras</from-outcome>
+			<to-view-id>/compras.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>compras.xhtml</display-name>
+		<from-view-id>/compras.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cadastroCompra</from-outcome>
+			<to-view-id>/cadastroCompra.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

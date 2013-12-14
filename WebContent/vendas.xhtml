@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='ISO8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="/template.xhtml">
+
+	<ui:define name="Conteudo">
+
+		<h:form>
+			<p:commandButton action="#{vendasBean.cadastro}" value="Novo" />
+			<br />
+			<br />
+			<p:dataTable var="v" value="#{vendasBean.vendas}" rowKey="#{v.id}"
+				selection="#{vendasBean.vendaSelecionada}" selectionMode="single">
+
+				<f:facet name="header">  
+           			Lista de Vendas
+        		</f:facet>
+				<p:column headerText="ID">
+					<h:outputText value="#{v.id}" />
+				</p:column>
+
+				<p:column headerText="Cliente">
+					<h:outputText value="#{v.cliente.nome}" />
+				</p:column>
+
+				<p:column headerText="Produto">
+					<h:outputText value="#{v.produto.nome}" />
+				</p:column>
+
+				<p:column headerText="Valor R$">
+					<h:outputText value="#{v.valor}" />
+				</p:column>
+				<p:column headerText="Data de Venda">
+					<h:outputText value="#{v.dataVenda}">
+						<f:convertDateTime pattern="MM/dd/yyyy HH:mm" />
+					</h:outputText>
+				</p:column>
+			</p:dataTable>
+			<br/>
+
+			<div style="width: 300px; margin: auto;">
+				<p:commandButton action="#{vendasBean.editar}" value="Editar" />
+				<p:commandButton onclick="confirmation.show()" value="Remover" />
+			</div>
+
+
+			<p:confirmDialog id="confirmDialog"
+				message="Você tem certeza que deseja remover?"
+				header="Remover Venda" severity="alert" widgetVar="confirmation">
+
+				<p:commandButton id="confirm" value="Confirmar" ajax="false"
+					oncomplete="confirmation.hide()" action="#{vendasBean.remover}" />
+				<p:commandButton id="decline" value="Cancelar"
+					onclick="confirmation.hide()" type="button" />
+
+			</p:confirmDialog>
+		</h:form>
+
+
+
+	</ui:define>
+
+</ui:composition>

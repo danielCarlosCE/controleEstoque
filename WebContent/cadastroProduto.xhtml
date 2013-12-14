@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='ISO8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="/template.xhtml">
+
+	<ui:define name="Conteudo">
+
+		<h:form>
+
+			<div>
+				<fieldset>
+					<legend>Cadastro:</legend>
+					<h:outputLabel value="Id: " />
+					<h:inputHidden value="#{produtosBean.produtoSelecionado.id}"></h:inputHidden>
+					<h:inputText disabled="true"
+						value="#{produtosBean.produtoSelecionado.id}"></h:inputText>
+					<br />
+
+					<h:outputLabel value="Nome: " />
+					<h:inputText value="#{produtosBean.produtoSelecionado.nome}"></h:inputText>
+					<br />
+
+					<h:outputLabel value="Preço: " />
+					<h:inputText value="#{produtosBean.produtoSelecionado.preco}"></h:inputText>
+					<br />
+					
+					<h:inputHidden value="#{produtosBean.editando}"></h:inputHidden>
+					<h:commandButton action="#{produtosBean.submit}" value="OK"></h:commandButton>
+
+				</fieldset>
+			</div>
+
+
+
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>

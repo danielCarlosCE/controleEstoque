@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='ISO8859-1' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" template="/template.xhtml">
+
+	<ui:define name="Conteudo">
+
+		<h:form>
+			<p:commandButton action="#{produtosBean.cadastro}" value="Novo"/><br/><br/>
+			<p:dataTable var="p" value="#{produtosBean.produtos}"
+				rowKey="#{p.id}" selection="#{produtosBean.produtoSelecionado}"
+				selectionMode="single">
+
+				<f:facet name="header">  
+           			Lista de Produtos
+        		</f:facet>
+				<p:column headerText="ID">
+					<h:outputText value="#{p.id}" />
+				</p:column>
+
+				<p:column headerText="Nome">
+					<h:outputText value="#{p.nome}" />
+				</p:column>
+
+				<p:column headerText="Preco">
+					<h:outputText value="#{p.preco}" />
+				</p:column>
+			</p:dataTable>
+			<br />
+			<div style="width:300px; margin: auto;">
+			<p:commandButton action="#{produtosBean.editar}" value="Editar"/>
+			<p:commandButton onclick="confirmation.show()" value="Remover" />
+	</div>
+
+
+			<p:confirmDialog id="confirmDialog"
+				message="Você tem certeza que deseja remover?"
+				header="Remover Produto" severity="alert" widgetVar="confirmation">
+
+				<p:commandButton id="confirm" value="Confirmar" ajax="false"
+					oncomplete="confirmation.hide()" action="#{produtosBean.remover}" />
+				<p:commandButton id="decline" value="Cancelar"
+					onclick="confirmation.hide()" type="button" />
+
+			</p:confirmDialog>
+
+		</h:form>
+
+
+
+	</ui:define>
+
+</ui:composition>
