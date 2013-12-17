@@ -13,22 +13,22 @@
 			<div>
 				<fieldset>
 					<legend>Cadastro:</legend>
-					<h:outputLabel value="Id: " />
+					<p:outputLabel value="Id: " />
 					<h:inputHidden value="#{produtosBean.produtoSelecionado.id}"></h:inputHidden>
-					<h:inputText disabled="true"
-						value="#{produtosBean.produtoSelecionado.id}"></h:inputText>
+					<p:inputText disabled="true"
+						value="#{produtosBean.produtoSelecionado.id}"></p:inputText>
 					<br />
 
-					<h:outputLabel value="Nome: " />
-					<h:inputText value="#{produtosBean.produtoSelecionado.nome}"></h:inputText>
+					<p:outputLabel value="Nome: " />
+					<p:inputText value="#{produtosBean.produtoSelecionado.nome}"></p:inputText>
 					<br />
 
-					<h:outputLabel value="Preço: " />
-					<h:inputText value="#{produtosBean.produtoSelecionado.preco}"></h:inputText>
+					<p:outputLabel value="Preço: " />
+					<p:inputText value="#{produtosBean.produtoSelecionado.preco}"></p:inputText>
 					<br />
 					
 					<h:inputHidden value="#{produtosBean.editando}"></h:inputHidden>
-					<h:commandButton action="#{produtosBean.submit}" value="OK"></h:commandButton>
+					<p:commandButton action="#{produtosBean.submit}" value="OK"></p:commandButton>
 
 				</fieldset>
 			</div>

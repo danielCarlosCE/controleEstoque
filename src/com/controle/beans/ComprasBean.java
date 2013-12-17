@@ -77,6 +77,9 @@ public class ComprasBean {
 	}
 
 	public String remover() {
+		if (compraSelecionada != null) {
+			new CompraDAO().remover(compraSelecionada);
+		}
 		return iniciar();
 	}
 

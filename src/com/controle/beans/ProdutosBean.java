@@ -39,8 +39,10 @@ public class ProdutosBean {
 
 	public String submit() {
 		if (editando) {
+			produtoSelecionado.setAtivo(true);
 			new ProdutoDAO().editar(produtoSelecionado);
 		} else {
+			produtoSelecionado.setAtivo(true);
 			new ProdutoDAO().salvar(produtoSelecionado);
 		}
 		return iniciar();
